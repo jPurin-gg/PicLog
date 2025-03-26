@@ -1,0 +1,19 @@
+services:
+  front:
+    build:
+    # Dockerfileのあるディレクトリを指定(基本，作業ディレクトリを指定)
+      context: ./front
+      dockerfile: ./../Dockerfile
+    tty: true
+    volumes:
+      - ./front:/front_app
+
+    # ホットリロードの有効化
+    environment:
+      - WATCHPACK_POLLING=true
+    command: sh -c "npm run dev"
+    # 左は自分のPCのポート、右はdockerコンテナ内のポート
+    ports:
+      - "3000:3000"
+
+  # back:

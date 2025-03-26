@@ -1,7 +1,5 @@
 # npm install で生成されるディレクトリ
 node_modules/
-# npm run build で生成されるディレクトリ
-.next/
 
 # ログファイル
 *.log
@@ -12,3 +10,7 @@ node_modules/
 # OSやエディタ固有のファイル
 .DS_Store
 .vscode/
+
+# git関係のファイル
+.gitignore
+.git

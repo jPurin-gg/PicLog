@@ -1,0 +1,33 @@
+{
+  "name": "piclog",
+  "version": "1.0.0",
+  "description": "写真や動画を閲覧できる感じなWebアプリを作成する予定です．",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jPurin-gg/PicLog.git"
+  },
+  "author": "purin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jPurin-gg/PicLog/issues"
+  },
+  "homepage": "https://github.com/jPurin-gg/PicLog#readme",
+  "dependencies": {
+    "next": "^15.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.11",
+    "@types/react": "19.0.12",
+    "typescript": "5.8.2"
+  }
+}
