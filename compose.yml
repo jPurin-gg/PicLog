@@ -1,12 +1,13 @@
 services:
-  front:
+ # サービス名．これをサービス名と同じにしないと設定がうまく反映されない
+  frontend:
     build:
     # Dockerfileのあるディレクトリを指定(基本，作業ディレクトリを指定)
-      context: ./front
+      context: ./frontend
       dockerfile: ./../Dockerfile
     tty: true
     volumes:
-      - ./front:/front_app
+      - ./frontend/src:/front_app/src
 
     # ホットリロードの有効化
     environment:
@@ -14,6 +15,6 @@ services:
     command: sh -c "npm run dev"
     # 左は自分のPCのポート、右はdockerコンテナ内のポート
     ports:
-      - "3000:3000"
+      - "4000:3000"
 
   # back:

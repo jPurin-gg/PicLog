@@ -1,7 +1,7 @@
 # ベースイメージとして Node.js を使用
 FROM node:20
 
-# 作業ディレクトリを設定
+# 作業ディレクトリを設定 # 多分docker内のどこにディレクトリ移動させるか的なやつ
 WORKDIR /app
 
 # package.json と package-lock.json をコピー
