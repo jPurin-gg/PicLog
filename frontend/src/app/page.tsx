@@ -46,7 +46,7 @@ unti          </li>
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read our docs
+            kakunin
           </a>
         </div>
       </main>
