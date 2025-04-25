@@ -5,10 +5,10 @@ services:
       context: . # Dockerfile のビルドコンテキスト（プロジェクトのルートディレクトリ）
       dockerfile: ./docker/Dockerfile.front.dev # 使用する Dockerfile のパス
 
-    # ホストマシンとコンテナ間でディレクトリを共有（リアルタイム同期）
+    # # ホストマシンとコンテナ間でディレクトリを共有（リアルタイム同期）
     volumes:
       - ./frontend:/app # ホストの ./frontend をコンテナの /app にマウント
-
+      - /app/node_modules
     # ホストとコンテナのポートをマッピング
     ports:
       - "3000:3000" # ホストの 3000 番ポートをコンテナの 3000 番ポートにマッピング
