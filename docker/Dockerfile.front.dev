@@ -1,0 +1,20 @@
+# Linux/amd64アーキに強制
+FROM --platform=linux/amd64 node:20
+
+# コンテナ内の作業ディレクトリを設定
+WORKDIR /app
+
+# package.json と package-lock.json をコンテナにコピー
+COPY frontend/package*.json ./
+
+# 依存関係をインストール
+RUN npm install
+
+# アプリケーションのソースコードをすべてコンテナにコピー
+COPY frontend/ .
+
+# コンテナで公開するポートを指定
+EXPOSE 3000
+
+# 開発サーバーを起動
+CMD ["npm", "run", "dev"]

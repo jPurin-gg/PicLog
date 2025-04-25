@@ -1,20 +1,17 @@
 services:
- # サービス名．これをサービス名と同じにしないと設定がうまく反映されない
   frontend:
+    # フロントエンドサービスのビルド設定
     build:
-    # Dockerfileのあるディレクトリを指定(基本，作業ディレクトリを指定)
-      context: ./frontend
-      dockerfile: ./../Dockerfile
-    tty: true
+      context: . # Dockerfile のビルドコンテキスト（プロジェクトのルートディレクトリ）
+      dockerfile: ./docker/Dockerfile.front.dev # 使用する Dockerfile のパス
+
+    # ホストマシンとコンテナ間でディレクトリを共有（リアルタイム同期）
     volumes:
-      - ./frontend/src:/front_app/src
+      - ./frontend:/app # ホストの ./frontend をコンテナの /app にマウント
 
-    # ホットリロードの有効化
-    environment:
-      - WATCHPACK_POLLING=true
-    command: sh -c "npm run dev"
-    # 左は自分のPCのポート、右はdockerコンテナ内のポート
+    # ホストとコンテナのポートをマッピング
     ports:
-      - "4000:3000"
+      - "3000:3000" # ホストの 3000 番ポートをコンテナの 3000 番ポートにマッピング
 
-  # back:
+    # コンテナ起動時に実行するコマンド
+    command: npm run dev # 開発サーバーを起動
