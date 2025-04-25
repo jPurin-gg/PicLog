@@ -14,3 +14,6 @@ node_modules/
 # git関係のファイル
 .gitignore
 .git
+
+# Next.jsのビルドファイル
+.next
